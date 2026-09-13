@@ -1,0 +1,26 @@
+name: rsl
+on:
+  schedule:
+    # 03:23 UTC = 05:23 CEST / 04:23 CET: well before the 07:00 Cowork read, and off the
+    # top of the hour, where GitHub delays scheduled runs the most.
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: python3 check_rsl_projects.py
+        env:
+          TZ: Europe/Zurich
+      - name: Commit state
+        # Publish failed runs too, so Cowork reports the failure instead of stale data.
+        if: ${{ !cancelled() }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state
+          git commit -m "rsl: $(jq -r .status state/latest_run.json)"
+          git push

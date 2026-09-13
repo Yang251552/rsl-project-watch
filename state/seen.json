@@ -1,0 +1,21 @@
+{
+ "updated": "2026-09-13T07:06:54",
+ "seen": {
+  "https://sirop.org/app/9d6e42e6-f075-449f-b490-747f5e91fc67": "Automatic Data Generation for Dexterous Humanoid Loco-Manipulation",
+  "https://sirop.org/app/4a26ef23-138c-40f6-82c3-da6b9f06a438": "Online Semantic Gaussian Splatting and RL for Mobile Robots",
+  "https://sirop.org/app/a94782a5-3d28-4b98-87da-6f8cd0afd2ab": "Whole-Body Motion Tracking for Wheeled Humanoids with Hexagon Robotics",
+  "https://sirop.org/app/d9252090-545c-4973-806b-69f731643c66": "Reinforcement Learning for Controlled Sledding Legged Locomotion on Steep Terrain",
+  "https://sirop.org/app/9397a1eb-9fb3-4a10-9797-9c26fb0e76d7": "Perceptive Locomotion for Wheeled Humanoids with Hexagon Robotics",
+  "https://sirop.org/app/a8894ce2-f1bc-440c-b1d6-e353a485ba6b": "Robotic Characters at Disney Research",
+  "https://sirop.org/app/09e4302c-2b09-4174-b0ff-2891e8d8755b": "Dynamics and Learning-Based Control of Parallel Mechanisms for LEO Applications",
+  "https://sirop.org/app/27cad3d2-8996-4747-b532-243f6915e9c0": "RAI Project - Sim-2-Real",
+  "https://sirop.org/app/a11db121-aeed-4dee-a8cb-3f5414b4cd68": "Illuminate the Moon: Effects of Illumination on Visual–Inertial Odometry",
+  "https://sirop.org/app/ac5116f8-ad04-4b42-ab9f-d22ee6b0267c": "Procedural environment generation for scalable sim-to-real training",
+  "https://sirop.org/app/1bceb753-08d0-423e-b2aa-0a2095f28c5b": "Soft object reconstruction",
+  "https://sirop.org/app/5b3ad1b0-16e3-424d-a2c3-e9672480dba3": "LLM-based scene graph construction and navigation",
+  "https://sirop.org/app/0a3833a6-0a18-4bbb-9f21-74dc37b01de4": "Learning-based robot state estimation",
+  "https://sirop.org/app/925b4ced-006c-4124-8c35-a7791bf6bda8": "Change-aware HD map-based planning and reasoning",
+  "https://sirop.org/app/3d153a31-21c4-473c-a62e-ff7a8a6ec2e3": "Towards ubiquitous intelligent humanoid systems",
+  "https://sirop.org/app/582dd134-5f4f-4f84-a240-ec5fcbd12f51": "Multi-Teacher Distillation"
+ }
+}

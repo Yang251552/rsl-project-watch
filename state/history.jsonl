@@ -1,0 +1,40 @@
+{"ts": "2026-07-27T22:49:31", "event": "new", "url": "https://sirop.org/app/3c8f2c96-6eab-4ffb-b388-efad3e0005fe", "title": "Narrow Space-Adaptive Humanoid Locomotion", "date": "27.07.2026"}
+{"ts": "2026-07-27T22:49:31", "event": "new", "url": "https://sirop.org/app/27edb33c-8499-48cc-832c-2cc322a8e061", "title": "Tytan Parkour", "date": "27.07.2026"}
+{"ts": "2026-07-27T22:49:31", "event": "new", "url": "https://sirop.org/app/582dd134-5f4f-4f84-a240-ec5fcbd12f51", "title": "Multi-Teacher Distillation", "date": "27.07.2026"}
+{"ts": "2026-07-27T22:49:31", "event": "baseline", "url": "https://sirop.org/app/b9784911-8c68-4d21-821a-f2fcfef020f9", "title": "Task-Aware Robotic Grasping for Robot-Human Handovers", "date": "24.07.2026"}
+{"ts": "2026-07-27T22:49:31", "event": "baseline", "url": "https://sirop.org/app/ee7c1ca4-59fc-4539-b6c3-f76629f31325", "title": "Robotic Characterization of Lunar Regolith for Contact Modelling", "date": "23.07.2026"}
+{"ts": "2026-07-27T22:49:31", "event": "baseline", "url": "https://sirop.org/app/d19b30ac-b6be-402e-b924-995fbcceace1", "title": "Beyond Convexity: Planning Mobile Manipulation of Diverse Objects", "date": "22.07.2026"}
+{"ts": "2026-07-27T22:49:31", "event": "baseline", "url": "https://sirop.org/app/da53cc17-4c18-4130-8c8a-666e85d66d6f", "title": "Disposable Scoop-Pouch for Leg-Assisted Regolith Sampling", "date": "21.07.2026"}
+{"ts": "2026-07-27T22:49:31", "event": "baseline", "url": "https://sirop.org/app/cb6191b6-a4e7-41c7-adaf-685ec2ee6acf", "title": "Hardware Support HiWi", "date": "15.07.2026"}
+{"ts": "2026-07-27T22:49:31", "event": "baseline", "url": "https://sirop.org/app/e0f9c257-4ac9-4faa-b06d-fdb97d0dcb3b", "title": "Lunar Dust Test Chamber – Hardware Development HiWi", "date": "15.07.2026"}
+{"ts": "2026-07-27T22:49:31", "event": "baseline", "url": "https://sirop.org/app/8e554b05-35ee-47c4-a22e-c9a9d7e46dc4", "title": "Emergent Acoustic Communication in Robot Groups", "date": "01.07.2026"}
+{"ts": "2026-07-27T22:49:31", "event": "baseline", "url": "https://sirop.org/app/caf47012-5b7c-4b01-95b8-a6702ecec10e", "title": "Fine-Tuning Multimodal Reasoning Models for Affordance and Manipulativity Prediction in Robotic Manipulation", "date": "10.05.2026"}
+{"ts": "2026-07-27T22:49:31", "event": "baseline", "url": "https://sirop.org/app/33dc7e36-943f-4b0c-baf8-d1878cac9ce1", "title": "Automated calibration of body-scale contact sensors", "date": "07.05.2026"}
+{"ts": "2026-07-30T07:06:25", "event": "new", "url": "https://sirop.org/app/0aacb772-3348-419e-876f-345db5a77883", "title": "Learning Dynamic Locomotion for a Monopedal Robot with a 3-DoF Parallel Leg", "date": "29.07.2026"}
+{"ts": "2026-07-31T07:07:20", "event": "new", "url": "https://sirop.org/app/ac5116f8-ad04-4b42-ab9f-d22ee6b0267c", "title": "Procedural environment generation for scalable sim-to-real training", "date": "30.07.2026"}
+{"ts": "2026-07-31T07:07:20", "event": "new", "url": "https://sirop.org/app/1bceb753-08d0-423e-b2aa-0a2095f28c5b", "title": "Soft object reconstruction", "date": "30.07.2026"}
+{"ts": "2026-07-31T07:07:20", "event": "new", "url": "https://sirop.org/app/5b3ad1b0-16e3-424d-a2c3-e9672480dba3", "title": "LLM-based scene graph construction and navigation", "date": "30.07.2026"}
+{"ts": "2026-07-31T07:07:20", "event": "new", "url": "https://sirop.org/app/0a3833a6-0a18-4bbb-9f21-74dc37b01de4", "title": "Learning-based robot state estimation", "date": "30.07.2026"}
+{"ts": "2026-07-31T07:07:20", "event": "new", "url": "https://sirop.org/app/925b4ced-006c-4124-8c35-a7791bf6bda8", "title": "Change-aware HD map-based planning and reasoning", "date": "30.07.2026"}
+{"ts": "2026-07-31T07:07:20", "event": "new", "url": "https://sirop.org/app/3d153a31-21c4-473c-a62e-ff7a8a6ec2e3", "title": "Towards ubiquitous intelligent humanoid systems", "date": "30.07.2026"}
+{"ts": "2026-08-04T07:28:52", "event": "removed", "url": "https://sirop.org/app/ee7c1ca4-59fc-4539-b6c3-f76629f31325", "title": "Robotic Characterization of Lunar Regolith for Contact Modelling"}
+{"ts": "2026-08-04T07:28:52", "event": "removed", "url": "https://sirop.org/app/caf47012-5b7c-4b01-95b8-a6702ecec10e", "title": "Fine-Tuning Multimodal Reasoning Models for Affordance and Manipulativity Prediction in Robotic Manipulation"}
+{"ts": "2026-08-04T07:28:52", "event": "new", "url": "https://sirop.org/app/a11db121-aeed-4dee-a8cb-3f5414b4cd68", "title": "Illuminate the Moon: Effects of Illumination on Visual–Inertial Odometry", "date": "03.08.2026"}
+{"ts": "2026-08-05T08:51:01", "event": "new", "url": "https://sirop.org/app/27cad3d2-8996-4747-b532-243f6915e9c0", "title": "RAI Project - Sim-2-Real", "date": "04.08.2026"}
+{"ts": "2026-08-21T07:00:54", "event": "removed", "url": "https://sirop.org/app/0aacb772-3348-419e-876f-345db5a77883", "title": "Learning Dynamic Locomotion for a Monopedal Robot with a 3-DoF Parallel Leg"}
+{"ts": "2026-08-21T07:00:54", "event": "removed", "url": "https://sirop.org/app/3c8f2c96-6eab-4ffb-b388-efad3e0005fe", "title": "Narrow Space-Adaptive Humanoid Locomotion"}
+{"ts": "2026-08-21T07:00:54", "event": "removed", "url": "https://sirop.org/app/b9784911-8c68-4d21-821a-f2fcfef020f9", "title": "Task-Aware Robotic Grasping for Robot-Human Handovers"}
+{"ts": "2026-08-21T07:00:54", "event": "removed", "url": "https://sirop.org/app/cb6191b6-a4e7-41c7-adaf-685ec2ee6acf", "title": "Hardware Support HiWi"}
+{"ts": "2026-08-21T07:00:54", "event": "removed", "url": "https://sirop.org/app/e0f9c257-4ac9-4faa-b06d-fdb97d0dcb3b", "title": "Lunar Dust Test Chamber – Hardware Development HiWi"}
+{"ts": "2026-08-21T07:00:54", "event": "removed", "url": "https://sirop.org/app/8e554b05-35ee-47c4-a22e-c9a9d7e46dc4", "title": "Emergent Acoustic Communication in Robot Groups"}
+{"ts": "2026-08-21T07:00:54", "event": "removed", "url": "https://sirop.org/app/33dc7e36-943f-4b0c-baf8-d1878cac9ce1", "title": "Automated calibration of body-scale contact sensors"}
+{"ts": "2026-08-21T07:00:54", "event": "new", "url": "https://sirop.org/app/a8894ce2-f1bc-440c-b1d6-e353a485ba6b", "title": "Robotic Characters at Disney Research", "date": "09.08.2026"}
+{"ts": "2026-08-21T07:00:54", "event": "new", "url": "https://sirop.org/app/09e4302c-2b09-4174-b0ff-2891e8d8755b", "title": "Dynamics and Learning-Based Control of Parallel Mechanisms for LEO Applications", "date": "07.08.2026"}
+{"ts": "2026-08-25T07:07:12", "event": "removed", "url": "https://sirop.org/app/d19b30ac-b6be-402e-b924-995fbcceace1", "title": "Beyond Convexity: Planning Mobile Manipulation of Diverse Objects"}
+{"ts": "2026-08-25T07:07:12", "event": "new", "url": "https://sirop.org/app/d9252090-545c-4973-806b-69f731643c66", "title": "Reinforcement Learning for Controlled Sledding Legged Locomotion on Steep Terrain", "date": "23.08.2026"}
+{"ts": "2026-08-25T07:07:12", "event": "new", "url": "https://sirop.org/app/9397a1eb-9fb3-4a10-9797-9c26fb0e76d7", "title": "Perceptive Locomotion for Wheeled Humanoids with Hexagon Robotics", "date": "22.08.2026"}
+{"ts": "2026-08-26T07:07:18", "event": "new", "url": "https://sirop.org/app/a94782a5-3d28-4b98-87da-6f8cd0afd2ab", "title": "Whole-Body Motion Tracking for Wheeled Humanoids with Hexagon Robotics", "date": "25.08.2026"}
+{"ts": "2026-08-27T07:07:01", "event": "removed", "url": "https://sirop.org/app/27edb33c-8499-48cc-832c-2cc322a8e061", "title": "Tytan Parkour"}
+{"ts": "2026-08-27T07:07:01", "event": "removed", "url": "https://sirop.org/app/da53cc17-4c18-4130-8c8a-666e85d66d6f", "title": "Disposable Scoop-Pouch for Leg-Assisted Regolith Sampling"}
+{"ts": "2026-08-28T07:06:29", "event": "new", "url": "https://sirop.org/app/4a26ef23-138c-40f6-82c3-da6b9f06a438", "title": "Online Semantic Gaussian Splatting and RL for Mobile Robots", "date": "27.08.2026"}
+{"ts": "2026-09-13T06:05:13", "event": "new", "url": "https://sirop.org/app/9d6e42e6-f075-449f-b490-747f5e91fc67", "title": "Automatic Data Generation for Dexterous Humanoid Loco-Manipulation", "date": "10.09.2026"}
