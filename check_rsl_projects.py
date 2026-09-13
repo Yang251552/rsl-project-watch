@@ -27,6 +27,7 @@ PUSH_HOUR = 7  # local hour the Cowork task reads LATEST; keep in sync with its 
 # A detection this close to the read waits for the next day's read: covers job runtime, git push
 # and the raw.githubusercontent.com cache (max-age=300), so a read never misses an item dated today.
 MARGIN = datetime.timedelta(minutes=20)
+KEEP_DAYS = 7  # detections stay in `new` this long; the README read rule re-lists the older ones
 FIELDS = ("url", "title", "date", "desc", "push_date")
 SURROGATES = re.compile(r"[\ud800-\udfff]")
 
@@ -80,20 +81,22 @@ def merge(pending, found):
     return pending + [e for e in found if e["url"] not in urls]
 
 
-def carry(items, today):
-    """Published detections whose read may still be ahead (push_date >= today). Carrying them into
-    every run means a re-run or a late cron extends the list instead of wiping what's unread."""
+def carry(items, cutoff):
+    """Published detections still inside the KEEP_DAYS window (push_date >= cutoff). Carrying them
+    into every run means a re-run or a late cron extends the list instead of wiping it, and a
+    Cowork read skipped for up to KEEP_DAYS - 1 days still finds what it missed."""
     try:
         return [e for e in items if isinstance(e, dict)
-                and all(isinstance(e.get(k), str) for k in FIELDS) and e["push_date"] >= today]
+                and all(isinstance(e.get(k), str) for k in FIELDS) and e["push_date"] >= cutoff]
     except TypeError:  # items is not a list at all
         return []
 
 
-def load_pending(today):
+def load_pending(run_at):
+    cutoff = (run_at.date() - datetime.timedelta(days=KEEP_DAYS - 1)).isoformat()
     try:
         with open(LATEST, encoding="utf-8") as f:
-            return carry(json.load(f)["new"], today)
+            return carry(json.load(f)["new"], cutoff)
     except (OSError, ValueError, KeyError, TypeError):
         return []
 
@@ -164,9 +167,9 @@ def selftest():
     assert push_date(at(14, 6, 39)) == "2026-09-14"   # still published and past the raw cache by 07:00
     assert push_date(at(14, 6, 40)) == "2026-09-15"   # too close to the read: next morning
     assert push_date(at(13, 12)) == "2026-09-14"      # daytime run: next morning
-    read, unread = dict(es[0], push_date="2026-09-13"), dict(es[1], push_date="2026-09-14")
-    assert carry([read, unread, {"url": "x"}, None], "2026-09-14") == [unread]  # already read / malformed
-    assert carry(None, "2026-09-14") == []
+    stale, recent = dict(es[0], push_date="2026-09-07"), dict(es[1], push_date="2026-09-08")
+    assert carry([stale, recent, {"url": "x"}, None], "2026-09-08") == [recent]  # out of window / malformed
+    assert carry(None, "2026-09-08") == []
     feed = [{"url": "u", "title": "T\ud83d\n x "}, {"url": "u", "title": "dup"}]
     assert [e["title"] for e in parse(feed)] == ["T x"]  # lone surrogate dropped, duplicate url dropped
     print("selftest ok")
@@ -176,7 +179,7 @@ def main():
     if "--selftest" in sys.argv:
         return selftest()
     run_at = datetime.datetime.now().astimezone()  # TZ from env; the workflow pins Europe/Zurich
-    pending = load_pending(run_at.date().isoformat())
+    pending = load_pending(run_at)
     try:
         entries = parse(fetch(FEED_URL))
     except Exception as ex:
