@@ -106,9 +106,8 @@ def append_history(events):
 
 
 def save_state(entries, run_at):
-    """Return True on success. A write failure is non-fatal: the report still prints."""
+    """Return True on success. A write failure is non-fatal: the report is already out."""
     try:
-        os.makedirs(STATE_DIR, exist_ok=True)
         data = {
             "updated": run_at.isoformat(timespec="seconds"),
             "seen": {e["url"]: e["title"] for e in entries},
@@ -122,6 +121,7 @@ def save_state(entries, run_at):
 
 def publish(run_at, status, new, listed=None, error=None):
     """Write LATEST, the contract the Cowork task reads (fields documented in README)."""
+    os.makedirs(STATE_DIR, exist_ok=True)
     with open(LATEST, "w", encoding="utf-8") as f:
         json.dump({"run_at": run_at.isoformat(timespec="seconds"),
                    "push_date": push_date(run_at).isoformat(),
@@ -168,16 +168,6 @@ def main():
         sys.exit(2)
     old = load_state()
     new = diff_new(old, entries)
-    if old is not None:
-        ts = run_at.isoformat(timespec="seconds")
-        cur = {e["url"] for e in entries}
-        append_history(
-            [{"ts": ts, "event": "removed", "url": u, "title": t}
-             for u, t in old.items() if u not in cur]
-            + [{"ts": ts, "event": "new", "url": e["url"], "title": e["title"],
-                "date": e["date"]} for e in new]
-        )
-    saved = save_state(entries, run_at)
     if new is None:
         print(f"BASELINE: first run, now tracking {len(entries)} current projects (not reported as new):\n{fmt(entries)}")
         publish(run_at, "BASELINE", pending, len(entries))
@@ -188,7 +178,18 @@ def main():
         else:
             print(f"NONE: no new projects since last check ({len(entries)} currently listed).")
         publish(run_at, "NEW" if pending else "NONE", pending, len(entries))
-    if not saved:
+    # History and snapshot only after publishing: if anything above dies, the next run
+    # re-detects these projects instead of finding them already marked seen but never published.
+    if old is not None:
+        ts = run_at.isoformat(timespec="seconds")
+        cur = {e["url"] for e in entries}
+        append_history(
+            [{"ts": ts, "event": "removed", "url": u, "title": t}
+             for u, t in old.items() if u not in cur]
+            + [{"ts": ts, "event": "new", "url": e["url"], "title": e["title"],
+                "date": e["date"]} for e in new]
+        )
+    if not save_state(entries, run_at):
         print("WARN: snapshot not saved (write failed); tomorrow may re-report these as new.")
 
 

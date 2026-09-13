@@ -19,7 +19,7 @@ GitHub Actions 每天抓 [ETH RSL 在招学生项目](https://rsl.ethz.ch/educat
 | `new` | 待推送的新增 `[{title, url, date, desc}]`，去重键是 `url` |
 | `error` | `FETCH_FAILED` 的报错，否则 `null` |
 
-同一 `push_date` 内的多次运行（手动触发、cron 延迟过 07:00）会累加 `new` 而不是覆盖：新增最多晚一天推，不会漏。
+同一 `push_date` 内的多次运行（手动触发、cron 延迟过 07:00）会累加 `new` 而不是覆盖：新增最多晚一天推，不会漏。唯一的缝：07:00 刚过、Cowork 还没读到的那几分钟里又跑了一次，当天待读的列表会被换成次日的——手动触发请避开 07:00–07:15。
 
 ## Cowork 定时任务提示词（每天 07:00，可直接粘贴）
 
