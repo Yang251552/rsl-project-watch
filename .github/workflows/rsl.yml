@@ -1,9 +1,10 @@
 name: rsl
 on:
   schedule:
-    # 03:23 UTC = 05:23 CEST / 04:23 CET: well before the 07:00 Cowork read, and off the
-    # top of the hour, where GitHub delays scheduled runs the most.
-    - cron: "23 3 * * *"
+    # GitHub schedules are best-effort: runs #4/#5 started 5.5 h late (see README). Two slots
+    # a day, off the top of the hour: 19:23 UTC (21:23 CEST) lands ~9.6 h before the 07:00 Cowork
+    # read, 03:23 UTC (05:23 CEST) refreshes it when it is on time.
+    - cron: "23 3,19 * * *"
   workflow_dispatch:
 # A manual run queues behind an in-progress one instead of racing it to push state/.
 concurrency: rsl-state
