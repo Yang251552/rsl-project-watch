@@ -1,7 +1,15 @@
 {
- "run_at": "2026-09-15T11:18:05+02:00",
- "status": "NONE",
- "listed": 16,
- "new": [],
+ "run_at": "2026-09-16T00:18:34+02:00",
+ "status": "NEW",
+ "listed": 17,
+ "new": [
+  {
+   "url": "https://sirop.org/app/f31d528c-6bcd-48cc-81df-c5b705854722",
+   "title": "Systematic Fall and Fault Case Evaluation for Legged Robots Characterizing failure modes and adaptive RL policies for quadrupeds, with attention to reduced gravity",
+   "date": "15.09.2026",
+   "desc": "Characterizing failure modes and adaptive RL policies for quadrupeds, with attention to reduced gravity",
+   "push_date": "2026-09-16"
+  }
+ ],
  "error": null
 }

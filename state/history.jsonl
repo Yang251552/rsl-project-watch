@@ -38,3 +38,4 @@
 {"ts": "2026-08-27T07:07:01", "event": "removed", "url": "https://sirop.org/app/da53cc17-4c18-4130-8c8a-666e85d66d6f", "title": "Disposable Scoop-Pouch for Leg-Assisted Regolith Sampling"}
 {"ts": "2026-08-28T07:06:29", "event": "new", "url": "https://sirop.org/app/4a26ef23-138c-40f6-82c3-da6b9f06a438", "title": "Online Semantic Gaussian Splatting and RL for Mobile Robots", "date": "27.08.2026"}
 {"ts": "2026-09-13T06:05:13", "event": "new", "url": "https://sirop.org/app/9d6e42e6-f075-449f-b490-747f5e91fc67", "title": "Automatic Data Generation for Dexterous Humanoid Loco-Manipulation", "date": "10.09.2026"}
+{"ts": "2026-09-16T00:18:34+02:00", "event": "new", "url": "https://sirop.org/app/f31d528c-6bcd-48cc-81df-c5b705854722", "title": "Systematic Fall and Fault Case Evaluation for Legged Robots Characterizing failure modes and adaptive RL policies for quadrupeds, with attention to reduced gravity", "date": "15.09.2026"}
