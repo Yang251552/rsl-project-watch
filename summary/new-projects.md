@@ -1,8 +1,14 @@
 # ETH RSL 新增在招项目汇总
 
-共 20 个，按检出日期（瑞士时间）分组，新的在上。每次检查后由 GitHub Actions 从 `state/history.jsonl` 重新生成，请勿手改。
+共 23 个，按检出日期（瑞士时间）分组，新的在上。每次检查后由 GitHub Actions 从 `state/history.jsonl` 重新生成，请勿手改。
 
 当前在挂列表：https://rsl.ethz.ch/education-students/student-projects0/available-projects.html
+
+## 2026-09-18
+
+- [Obstacle Avoidant Whole Body Pick and Place with Humanoids](https://sirop.org/app/b95bafab-0323-4706-847d-a2bda6997002)
+- [Learning Leg-Based Terrain Interaction Across Gravity Environments Reinforcement learning for moving rocks, scratching, and digging with a legged robot’s own limbs, from Earth to lunar gravity](https://sirop.org/app/7df94e90-acb5-4877-a72f-41b469481bda)
+- [3D Representations for Scene-Aware Pick and Place](https://sirop.org/app/d687a151-bd2d-43c0-9568-c12fcfe2b3cd)
 
 ## 2026-09-16
 

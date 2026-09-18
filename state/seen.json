@@ -1,6 +1,9 @@
 {
- "updated": "2026-09-18T10:21:11+02:00",
+ "updated": "2026-09-18T23:43:53+02:00",
  "seen": {
+  "https://sirop.org/app/b95bafab-0323-4706-847d-a2bda6997002": "Obstacle Avoidant Whole Body Pick and Place with Humanoids",
+  "https://sirop.org/app/7df94e90-acb5-4877-a72f-41b469481bda": "Learning Leg-Based Terrain Interaction Across Gravity Environments Reinforcement learning for moving rocks, scratching, and digging with a legged robot’s own limbs, from Earth to lunar gravity",
+  "https://sirop.org/app/d687a151-bd2d-43c0-9568-c12fcfe2b3cd": "3D Representations for Scene-Aware Pick and Place",
   "https://sirop.org/app/f31d528c-6bcd-48cc-81df-c5b705854722": "Systematic Fall and Fault Case Evaluation for Legged Robots Characterizing failure modes and adaptive RL policies for quadrupeds, with attention to reduced gravity",
   "https://sirop.org/app/9d6e42e6-f075-449f-b490-747f5e91fc67": "Automatic Data Generation for Dexterous Humanoid Loco-Manipulation",
   "https://sirop.org/app/4a26ef23-138c-40f6-82c3-da6b9f06a438": "Online Semantic Gaussian Splatting and RL for Mobile Robots",
