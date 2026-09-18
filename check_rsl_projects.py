@@ -5,9 +5,11 @@ Fetches the page's own JSON feed, diffs it against state/seen.json, and writes t
 outcome to state/latest_run.json, which the 07:00 Cowork task reads through
 raw.githubusercontent.com (Cowork itself can't reach rsl.ethz.ch). The snapshot is
 overwritten ONLY on a successful, non-empty fetch, so a network blip or endpoint
-change can't flood the next run with false "new" entries.
+change can't flood the next run with false "new" entries. Every run that gets a feed also
+regenerates summary/new-projects.md, the human-readable list of every detection, from
+state/history.jsonl.
 
-    python3 check_rsl_projects.py            # run the check (mutates state/)
+    python3 check_rsl_projects.py            # run the check (mutates state/ and summary/)
     python3 check_rsl_projects.py --selftest # run the logic self-check
 """
 import datetime
@@ -23,13 +25,15 @@ STATE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "state")
 STATE = os.path.join(STATE_DIR, "seen.json")
 HISTORY = os.path.join(STATE_DIR, "history.jsonl")
 LATEST = os.path.join(STATE_DIR, "latest_run.json")
+SUMMARY = os.path.join(os.path.dirname(STATE_DIR), "summary", "new-projects.md")
 PUSH_HOUR = 7  # local hour the Cowork task reads LATEST; keep in sync with its schedule
 # A detection this close to the read waits for the next day's read: covers job runtime, git push
 # and the raw.githubusercontent.com cache (max-age=300), so a read never misses an item dated today.
 MARGIN = datetime.timedelta(minutes=20)
-KEEP_DAYS = 7  # detections stay in `new` this long; the README read rule re-lists the older ones
+KEEP_DAYS = 7  # detections stay in `new` this long; SUMMARY keeps every one for good
 FIELDS = ("url", "title", "date", "desc", "push_date")
 SURROGATES = re.compile(r"[\ud800-\udfff]")
+MD_SPECIAL = re.compile(r"([\\`*_\[\]<>])")
 
 
 def fetch(url):
@@ -83,8 +87,8 @@ def merge(pending, found):
 
 def carry(items, cutoff):
     """Published detections still inside the KEEP_DAYS window (push_date >= cutoff). Carrying them
-    into every run means a re-run or a late cron extends the list instead of wiping it, and a
-    Cowork read skipped for up to KEEP_DAYS - 1 days still finds what it missed."""
+    into every run means a re-run or a late cron extends the list instead of wiping it before
+    the read on its push_date. A read that never happens is caught by SUMMARY, not by `new`."""
     try:
         return [e for e in items if isinstance(e, dict)
                 and all(isinstance(e.get(k), str) for k in FIELDS) and e["push_date"] >= cutoff]
@@ -124,6 +128,41 @@ def append_history(events):
                 f.write(json.dumps(ev, ensure_ascii=False) + "\n")
     except OSError:
         pass
+
+
+def render_summary(lines):
+    """Markdown of every `new` event in the history lines, grouped by detection day, newest first."""
+    days = {}
+    for line in lines:
+        try:
+            ev = json.loads(line)
+        except ValueError:
+            continue  # a torn line must not take the whole summary down
+        if (isinstance(ev, dict) and ev.get("event") == "new"
+                and all(isinstance(ev.get(k), str) for k in ("ts", "url", "title"))):
+            days.setdefault(ev["ts"][:10], []).append(ev)
+    out = ["# ETH RSL 新增在招项目汇总", "",
+           f"共 {sum(map(len, days.values()))} 个，按检出日期（瑞士时间）分组，新的在上。"
+           "每次检查后由 GitHub Actions 从 `state/history.jsonl` 重新生成，请勿手改。", "",
+           f"当前在挂列表：{PAGE_URL}", ""]
+    for day in sorted(days, reverse=True):
+        out += [f"## {day}", ""]
+        out += ["- [" + MD_SPECIAL.sub(r"\\\1", e["title"]) + "](" + e["url"] + ")" for e in days[day]]
+        out.append("")
+    return "\n".join(out)
+
+
+def write_summary():
+    """Regenerate SUMMARY from HISTORY. Best-effort like append_history; an unreadable
+    history leaves the old summary in place instead of blanking it."""
+    try:
+        with open(HISTORY, encoding="utf-8") as f:
+            text = render_summary(f)
+        os.makedirs(os.path.dirname(SUMMARY), exist_ok=True)
+        with open(SUMMARY, "w", encoding="utf-8") as f:
+            f.write(text)
+    except (OSError, ValueError) as ex:  # ValueError: undecodable history bytes
+        print(f"WARN: summary not written: {ex}")
 
 
 def save_state(entries, run_at):
@@ -172,6 +211,13 @@ def selftest():
     assert carry(None, "2026-09-08") == []
     feed = [{"url": "u", "title": "T\ud83d\n x "}, {"url": "u", "title": "dup"}]
     assert [e["title"] for e in parse(feed)] == ["T x"]  # lone surrogate dropped, duplicate url dropped
+    hist = ['{"ts": "2026-09-13T06:05:13", "event": "new", "url": "u1", "title": "A [x]"}\n',
+            '{"ts": "2026-09-16T00:18:34+02:00", "event": "new", "url": "u2", "title": "B"}\n',
+            '{"ts": "2026-09-16T05:23:00+02:00", "event": "removed", "url": "u1", "title": "A [x]"}\n',
+            '{"ts": "2026-09-17T05:23:00+02:00", "event": "new", "url": "u3"', "\n", "[1]\n"]
+    md = render_summary(hist)
+    assert "共 2 个" in md and md.index("## 2026-09-16") < md.index("## 2026-09-13")  # newest day first
+    assert "- [A \\[x\\]](u1)" in md and md.count("](u") == 2  # title escaped; removed/torn/junk skipped
     print("selftest ok")
 
 
@@ -217,6 +263,7 @@ def main():
         )
     if not save_state(entries, run_at):
         print("WARN: snapshot not saved (write failed); tomorrow may re-report these as new.")
+    write_summary()  # last, so nothing here can keep the snapshot from being saved
 
 
 if __name__ == "__main__":
