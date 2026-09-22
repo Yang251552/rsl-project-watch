@@ -1,15 +1,8 @@
 {
- "run_at": "2026-09-22T10:39:12+02:00",
+ "run_at": "2026-09-23T00:17:10+02:00",
  "status": "NONE",
  "listed": 19,
  "new": [
-  {
-   "url": "https://sirop.org/app/f31d528c-6bcd-48cc-81df-c5b705854722",
-   "title": "Systematic Fall and Fault Case Evaluation for Legged Robots Characterizing failure modes and adaptive RL policies for quadrupeds, with attention to reduced gravity",
-   "date": "15.09.2026",
-   "desc": "Characterizing failure modes and adaptive RL policies for quadrupeds, with attention to reduced gravity",
-   "push_date": "2026-09-16"
-  },
   {
    "url": "https://sirop.org/app/b95bafab-0323-4706-847d-a2bda6997002",
    "title": "Obstacle Avoidant Whole Body Pick and Place with Humanoids",
