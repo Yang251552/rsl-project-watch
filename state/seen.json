@@ -1,8 +1,8 @@
 {
- "updated": "2026-09-23T10:41:22+02:00",
+ "updated": "2026-09-24T00:21:35+02:00",
  "seen": {
   "https://sirop.org/app/b95bafab-0323-4706-847d-a2bda6997002": "Obstacle Avoidant Whole Body Pick and Place with Humanoids",
-  "https://sirop.org/app/7df94e90-acb5-4877-a72f-41b469481bda": "Learning Leg-Based Terrain Interaction Across Gravity Environments Reinforcement learning for moving rocks, scratching, and digging with a legged robot’s own limbs, from Earth to lunar gravity",
+  "https://sirop.org/app/7df94e90-acb5-4877-a72f-41b469481bda": "Learning Leg-Based Terrain Interaction Across Gravity Environments",
   "https://sirop.org/app/d687a151-bd2d-43c0-9568-c12fcfe2b3cd": "3D Representations for Scene-Aware Pick and Place",
   "https://sirop.org/app/9d6e42e6-f075-449f-b490-747f5e91fc67": "Automatic Data Generation for Dexterous Humanoid Loco-Manipulation",
   "https://sirop.org/app/4a26ef23-138c-40f6-82c3-da6b9f06a438": "Online Semantic Gaussian Splatting and RL for Mobile Robots",
@@ -11,7 +11,6 @@
   "https://sirop.org/app/9397a1eb-9fb3-4a10-9797-9c26fb0e76d7": "Perceptive Locomotion for Wheeled Humanoids with Hexagon Robotics",
   "https://sirop.org/app/a8894ce2-f1bc-440c-b1d6-e353a485ba6b": "Robotic Characters at Disney Research",
   "https://sirop.org/app/09e4302c-2b09-4174-b0ff-2891e8d8755b": "Dynamics and Learning-Based Control of Parallel Mechanisms for LEO Applications",
-  "https://sirop.org/app/27cad3d2-8996-4747-b532-243f6915e9c0": "RAI Project - Sim-2-Real",
   "https://sirop.org/app/a11db121-aeed-4dee-a8cb-3f5414b4cd68": "Illuminate the Moon: Effects of Illumination on Visual–Inertial Odometry",
   "https://sirop.org/app/ac5116f8-ad04-4b42-ab9f-d22ee6b0267c": "Procedural environment generation for scalable sim-to-real training",
   "https://sirop.org/app/1bceb753-08d0-423e-b2aa-0a2095f28c5b": "Soft object reconstruction",
