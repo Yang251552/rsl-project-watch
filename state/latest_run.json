@@ -1,29 +1,7 @@
 {
- "run_at": "2026-09-25T10:55:50+02:00",
+ "run_at": "2026-09-26T00:28:25+02:00",
  "status": "NONE",
  "listed": 18,
- "new": [
-  {
-   "url": "https://sirop.org/app/b95bafab-0323-4706-847d-a2bda6997002",
-   "title": "Obstacle Avoidant Whole Body Pick and Place with Humanoids",
-   "date": "18.09.2026",
-   "desc": "This thesis will be carried out in collaboration with NVIDIA. Humanoid robots operating in cluttered environments must coordinate manipulation and whole-body motion while avoiding collisions with surrounding geometry. Wh",
-   "push_date": "2026-09-19"
-  },
-  {
-   "url": "https://sirop.org/app/7df94e90-acb5-4877-a72f-41b469481bda",
-   "title": "Learning Leg-Based Terrain Interaction Across Gravity Environments Reinforcement learning for moving rocks, scratching, and digging with a legged robot’s own limbs, from Earth to lunar gravity",
-   "date": "18.09.2026",
-   "desc": "einforcement learning for moving rocks, scratching, and digging with a legged robot’s own limbs, from Earth to lunar gravity",
-   "push_date": "2026-09-19"
-  },
-  {
-   "url": "https://sirop.org/app/d687a151-bd2d-43c0-9568-c12fcfe2b3cd",
-   "title": "3D Representations for Scene-Aware Pick and Place",
-   "date": "18.09.2026",
-   "desc": "This thesis will be carried out in collaboration with NVIDIA. Humanoid manipulation in cluttered environments requires reasoning about the surrounding 3D scene, including geometry outside the current field of view. This ",
-   "push_date": "2026-09-19"
-  }
- ],
+ "new": [],
  "error": null
 }
